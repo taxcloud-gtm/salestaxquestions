@@ -1,0 +1,76 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/is-sales-tax-charged-on-shipping-if-listed-separately-on-invoice",
+      "destination": "/is-shipping-taxable",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-transfer-sst-registration-between-csps",
+      "destination": "/how-do-i-switch-csps-in-the-sst-program",
+      "permanent": true
+    },
+    {
+      "source": "/do-amazon-etsy-sales-count-toward-nexus-threshold",
+      "destination": "/do-marketplace-sales-count-toward-my-nexus-threshold",
+      "permanent": true
+    },
+    {
+      "source": "/what-does-sales-tax-compliance-actually-cost",
+      "destination": "/what-does-sales-tax-compliance-cost-a-5m-20m-ecommerce-brand",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings",
+      "destination": "/how-do-i-reconcile-amazon-1099k-with-state-sales-tax-filings",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-manage-compliance-across-30-to-45-states",
+      "destination": "/how-do-i-manage-sales-tax-compliance-across-30-45-states",
+      "permanent": true
+    },
+    {
+      "source": "/how-does-sales-tax-work-on-returns-and-refunds",
+      "destination": "/if-i-refund-a-customer-is-the-sales-tax-also-refunded",
+      "permanent": true
+    },
+    {
+      "source": "/does-economic-nexus-make-physical-presence-rules-irrelevant",
+      "destination": "/does-physical-nexus-still-matter-now-that-economic-nexus-exists",
+      "permanent": true
+    },
+    {
+      "source": "/when-does-sales-tax-liability-accrue-order-fulfillment-or-payment",
+      "destination": "/do-i-owe-sales-tax-when-i-invoice-when-i-ship-or-when-i-get-paid",
+      "permanent": true
+    },
+    {
+      "source": "/what-changed-for-ecommerce-sellers-after-the-2018-wayfair-ruling",
+      "destination": "/what-is-the-wayfair-ruling",
+      "permanent": true
+    },
+    {
+      "source": "/sst-states-vs-non-sst-states",
+      "destination": "/what-is-the-difference-between-sst-and-non-sst-states",
+      "permanent": true
+    },
+    {
+      "source": "/registering-proactively-vs-waiting",
+      "destination": "/what-is-the-risk-of-waiting-to-register",
+      "permanent": true
+    },
+    {
+      "source": "/how-long-can-a-state-audit-go-back",
+      "destination": "/how-far-back-do-i-owe-sales-tax",
+      "permanent": true
+    },
+    {
+      "source": "/how-do-i-handle-sales-tax-selling-amazon-and-shopify",
+      "destination": "/how-do-i-aggregate-nexus-thresholds-across-channels",
+      "permanent": true
+    }
+  ]
+}

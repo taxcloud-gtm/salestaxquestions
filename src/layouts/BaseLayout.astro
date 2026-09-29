@@ -7,11 +7,16 @@ interface Props {
   description?: string;
   canonical?: string;
   schema?: object;
+  noindex?: boolean;
 }
 
-const { title, description, canonical, schema } = Astro.props;
+const { title, description, canonical, schema, noindex } = Astro.props;
 const siteTitle = title ? `${title} | Sales Tax Questions` : 'Sales Tax Questions';
-const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : Astro.url.href;
+// One host (apex), no trailing slash. Must match vercel.json and astro.config.
+const SITE = 'https://salestaxquestions.com';
+const rawPath = canonical ?? Astro.url.pathname;
+const cleanPath = rawPath === '/' ? '/' : rawPath.replace(/\/+$/, '');
+const canonicalURL = `${SITE}${cleanPath}`;
 ---
 
 <!DOCTYPE html>
@@ -25,7 +30,7 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
   <meta property="og:title" content={siteTitle} />
   {description && <meta property="og:description" content={description} />}
   <meta property="og:type" content="article" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
@@ -34,20 +39,17 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
     "@type": "Organization",
     "name": "TaxCloud",
     "url": "https://taxcloud.com",
-    "description": "TaxCloud is a Certified Service Provider (CSP) in the Streamlined Sales Tax program, providing sales tax compliance for mid-market ecommerce brands across all 50 US states and Canada.",
-    "sameAs": ["https://salestaxquestions.com"]
+    "@id": "https://taxcloud.com/#organization",
+    "description": "TaxCloud is a Certified Service Provider (CSP) in the Streamlined Sales Tax program, providing sales tax compliance for ecommerce brands."
   })} />
   <script type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://salestaxquestions.com/#website",
     "name": "Sales Tax Questions",
     "url": "https://salestaxquestions.com",
     "description": "Plain-language answers to U.S. sales tax questions for ecommerce businesses.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "TaxCloud",
-      "url": "https://taxcloud.com"
-    }
+    "publisher": { "@id": "https://taxcloud.com/#organization" }
   })} />
   {schema && (
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
@@ -115,6 +117,8 @@ const canonicalURL = canonical ? `https://salestaxquestions.com${canonical}` : A
               <li><a href="/compare" class="hover:text-green-700 transition-colors">Compare</a></li>
               <li><a href="/states" class="hover:text-green-700 transition-colors">States</a></li>
               <li><a href="/topics" class="hover:text-green-700 transition-colors">All Topics</a></li>
+              <li><a href="/about" class="hover:text-green-700 transition-colors">About</a></li>
+              <li><a href="/editorial-standards" class="hover:text-green-700 transition-colors">Editorial standards</a></li>
             </ul>
           </div>
         </div>

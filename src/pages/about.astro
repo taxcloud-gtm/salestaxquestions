@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About Sales Tax Questions',
+  url: 'https://salestaxquestions.com/about',
+  isPartOf: { '@id': 'https://salestaxquestions.com/#website' },
+  publisher: { '@id': 'https://taxcloud.com/#organization' },
+};
+---
+
+<BaseLayout
+  title="About Sales Tax Questions"
+  description="Who publishes Sales Tax Questions, who it is for, and how the answers are written and kept current."
+  canonical="/about"
+  schema={schema}
+>
+  <div class="max-w-3xl mx-auto px-4 py-10 prose prose-slate">
+    <h1>About Sales Tax Questions</h1>
+
+    <p>Sales Tax Questions answers the US sales tax questions that ecommerce operators run into: when you owe tax in another state, what is taxable, how registration and filing work, and what to do about past exposure. It is written for founders, finance leads and controllers at growing online brands.</p>
+
+    <h2>Who publishes this site</h2>
+    <p>This site is published and funded by <a href="https://taxcloud.com">TaxCloud</a>, a sales tax compliance company and a Certified Service Provider in the Streamlined Sales Tax program. TaxCloud is also one of the providers discussed on the comparison pages. Keep that in mind when you read those pages, and check pricing and features with each provider directly.</p>
+
+    <h2>How the answers are written</h2>
+    <p>Pages are researched and drafted by TaxCloud's marketing team with the help of AI writing tools, then edited by the team. Each page shows the date it was last updated. Sales tax rules change often, so for any decision that matters, confirm the current rule with the state's department of revenue. Our <a href="/editorial-standards">editorial standards</a> explain how we handle sources, updates and corrections.</p>
+
+    <h2>What this site is not</h2>
+    <p>Nothing here is legal or tax advice. The answers explain how the rules generally work. Your obligations depend on your facts, so talk to a qualified tax professional before acting on them.</p>
+  </div>
+</BaseLayout>

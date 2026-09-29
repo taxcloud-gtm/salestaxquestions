@@ -1,7 +1,7 @@
 ---
 title: "What sales tax configuration breaks when migrating from Magento to Shopify?"
 slug: "what-sales-tax-configuration-breaks-when-migrating-from-magento-to-shopify"
-topic: "Ecommerce Platform Integrations"
+topic: "Ecommerce Platforms"
 topicSlug: "ecommerce-platforms"
 type: "Deep Guide"
 difficulty: "Advanced"
@@ -19,6 +19,7 @@ faqs:
     answer: "No. Magento and Shopify use completely different tax architectures. Magento stores tax rules, tax classes, and rate tables in its own database. Shopify uses nexus-based calculation with its own tax provider system. Platform migration tools (Litextension, Cart2Cart) move product and order data, they do not transfer tax configuration. Everything must be rebuilt: nexus settings, product tax codes, exemption certificate workflows, and tax engine connections."
   - question: "What is the biggest sales tax risk during a Magento-to-Shopify migration?"
     answer: "The biggest risks are: (1) going live on Shopify without completing the tax configuration, resulting in a period where no tax is collected; (2) losing product tax code mappings so all products calculate as fully taxable, meaning exempt or reduced-rate items get overtaxed; and (3) losing customer exemption certificate records, so previously exempt B2B buyers get charged tax on their first Shopify order."
+noindex: true
 ---
 
 Migrating from Magento to Shopify is effectively a full tax rebuild, not a transfer. Every layer of configuration must be re-established on Shopify before go-live.

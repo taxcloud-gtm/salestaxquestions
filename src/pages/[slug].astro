@@ -26,26 +26,22 @@ const relatedQuestions = (data.related ?? [])
 
 const siteBase = 'https://salestaxquestions.com';
 
-const qaSchema = {
+const pageUrl = `${siteBase}/${data.slug}`;
+const articleSchema = {
   '@context': 'https://schema.org',
-  '@type': 'QAPage',
+  '@type': 'Article',
+  headline: data.title,
+  ...(data.metaDescription ? { description: data.metaDescription } : {}),
   ...(data.publishedAt ? { datePublished: data.publishedAt } : {}),
-  ...(data.updatedAt ? { dateModified: data.updatedAt } : {}),
-  publisher: {
+  dateModified: data.updatedAt ?? data.publishedAt,
+  mainEntityOfPage: pageUrl,
+  isPartOf: { '@id': `${siteBase}/#website` },
+  author: {
     '@type': 'Organization',
-    name: 'TaxCloud',
-    url: 'https://taxcloud.com',
+    name: 'Sales Tax Questions editorial team',
+    url: `${siteBase}/about`,
   },
-  mainEntity: {
-    '@type': 'Question',
-    name: data.title,
-    text: data.title,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: data.metaDescription ?? '',
-      url: `${siteBase}/${data.slug}`,
-    },
-  },
+  publisher: { '@id': 'https://taxcloud.com/#organization', '@type': 'Organization', name: 'TaxCloud', url: 'https://taxcloud.com' },
 };
 
 const breadcrumbSchema = {
@@ -90,8 +86,9 @@ const lastUpdated = fmtDate(data.updatedAt ?? data.publishedAt);
   description={data.metaDescription}
   canonical={`/${data.slug}`}
   schema={faqSchema}
+  noindex={data.noindex}
 >
-  <script type="application/ld+json" set:html={JSON.stringify(qaSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
   <div class="max-w-3xl mx-auto px-4 py-10">
     <!-- Breadcrumb -->
