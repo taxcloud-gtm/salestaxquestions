@@ -1,17 +1,16 @@
 ---
 title: "Does Shopify capture sales tax at order placement or fulfillment?"
 slug: "how-does-shopify-capture-tax-at-order-or-fulfillment"
-topic: "Ecommerce Platform Integrations"
+topic: "Ecommerce Platforms"
 topicSlug: "ecommerce-platforms"
 type: "Deep Guide"
 difficulty: "Intermediate"
 publishedAt: "2026-05-04"
 updatedAt: "2026-05-04"
 related:
-  - "when-does-sales-tax-liability-accrue-order-fulfillment-or-payment"
-  - "how-does-shopify-handle-sales-tax"
-  - "how-do-i-reconcile-amazon-1099k-data-with-my-sales-tax-filings"
   - "do-i-owe-sales-tax-when-i-invoice-when-i-ship-or-when-i-get-paid"
+  - "how-does-shopify-handle-sales-tax"
+  - "how-do-i-reconcile-amazon-1099k-with-state-sales-tax-filings"
 metaDescription: "Shopify calculates and locks in the sales tax rate at the time of order placement, not at fulfillment. The tax amount shown on the order confirmation is the tax amount that will be collected. If fulfillment happens later and the rate has changed in the interim, Shopify does not recalculate. For sales tax reporting purposes, the liability accrues at the time of shipment, but the Shopify tax amount is fixed at order creation."
 tldr: "Shopify locks the tax rate at checkout and does not recalculate at fulfillment. For standard fulfillment windows this produces correct results, but pre-orders, backorders, and long fulfillment delays create edge cases where the collected rate may differ from the current rate. Shopify's Sales Tax Report allocates by order date, not fulfillment date."
 faqs:
@@ -19,6 +18,7 @@ faqs:
     answer: "No. Shopify calculates and locks in the tax amount at the time the order is placed. When the order is marked as fulfilled, Shopify does not run a new tax calculation. The tax amount on the fulfillment is the same as what was calculated at checkout. If rates change between order placement and fulfillment, Shopify's recorded tax amount reflects the rate at order time, not the current rate."
   - question: "When does my sales tax liability actually accrue in Shopify?"
     answer: "For sales tax reporting and filing purposes, liability generally accrues at the time of shipment (fulfillment), not at the time of payment or order placement. Shopify marks orders with tax at the time of checkout, but the sales tax liability that needs to be reported to the state accrues when the goods are shipped. For most Shopify sellers, orders are fulfilled quickly after placement, so the practical difference is minimal. Pre-orders, backorders, and long fulfillment windows are where the distinction matters."
+noindex: true
 ---
 
 Shopify locks in the tax rate at checkout. The fulfillment event doesn't trigger a new calculation, which creates specific edge cases sellers need to understand.

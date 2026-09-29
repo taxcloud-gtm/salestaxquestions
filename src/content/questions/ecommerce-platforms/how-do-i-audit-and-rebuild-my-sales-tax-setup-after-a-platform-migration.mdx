@@ -1,7 +1,7 @@
 ---
 title: "How do I audit and rebuild my sales tax setup after a platform migration?"
 slug: "how-do-i-audit-and-rebuild-my-sales-tax-setup-after-a-platform-migration"
-topic: "Ecommerce Platform Integrations"
+topic: "Ecommerce Platforms"
 topicSlug: "ecommerce-platforms"
 type: "Quick Answer"
 difficulty: "Advanced"
@@ -19,6 +19,7 @@ faqs:
     answer: "After a platform migration, verify: (1) nexus states are configured in the new platform's tax settings; (2) the tax engine integration is connected and live, not just installed; (3) product tax codes are mapped for any items with special taxability (clothing, digital goods, food, etc.); (4) exempt customer records are carried over and active in the new platform; (5) AutoFile enrollment is still active in your tax engine account and pulling data from the new platform."
   - question: "How do I know if my sales tax is calculating correctly after migration?"
     answer: "Place test orders in each nexus state for (a) a standard taxable product and (b) any products with special taxability treatments. Confirm the tax amount in the order matches the expected rate. Also test an order for an exempt customer, confirm $0 tax applies. If you can't complete a live test before launch, set up a sandbox order that you immediately cancel but which lets you see the tax calculation."
+noindex: true
 ---
 
 A platform migration creates a compliance gap if the tax setup isn't explicitly rebuilt. Assume nothing transferred, audit and verify every layer before processing live orders.
